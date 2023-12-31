@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style/index.css" />
+    <script src="script/index.js" defer></script>
+    <title>Home - Dashboard</title>
+  </head>
+  <body>
+    <div id="wrapper">
+
+
+      <div id="content">
+        <div id="main" class="showSidebar">
+          <div class="header">
+            <div class="left">
+              <div class="toggleBtn cross" onclick="toggleSidebar()">
+                <i id="menuIcon" class="fa-solid fa-times"></i>
+              </div>
+            </div>
+            <div class="right">
+              <a href="" onclick="toggleDropdown(event)"
+                ><img
+                  style="width: 30px; border-radius: 50%"
+                  src="./images/login.png"
+                  alt=""
+              /></a>
+              <div class="dropdown" id="myDropdown">
+                <a href="./login.html">Login</a>
+                <a href="#">Settings</a>
+              </div>
+            </div>
+          </div>
+         
+          <!-- Main Content  -->
+    <div class="mainContent">
+        <div class="container">
+            <h1>Create/Edit Home</h1>
+            <form id="createHomeForm" enctype="multipart/form-data">
+              <!-- Name Field -->
+              <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name" required>
+            </div>
+        
+              <!-- Skills Field -->
+              <div>
+              <label for="skills">Skills (comma-separated):</label>
+              <input type="text" id="skills" placeholder="Software Engineer, Web Developer">
+            </div>
+
+
+              <!-- Image Upload Field -->
+              <div>
+              <label for="image">Image (JPG or PNG):</label>
+              <div id="currentImageContainer"></div> <!-- Container to display the current image -->
+              <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" required>
+            </div>
+
+              <!-- About Me Field -->
+              <div>
+              <label for="aboutMe">About Me:</label>
+              <textarea id="aboutMe" rows="4"></textarea>
+            </div>
+
+
+              <!-- Resume Link Field -->
+              <div>
+              <label for="resumeLink">Resume Link:</label>
+              <input type="text" id="resumeLink">
+            </div>
+
+          
+              <!-- Address Section -->
+              <div id="addresses">
+                <!-- Address fields will be dynamically added here -->
+              </div>
+              <button type="button" id="addAddress">Add Address</button>
+        
+
+
+              <!-- Social Links Section -->
+              <div id="socialLinks">
+                <!-- Social link fields will be dynamically added here -->
+              </div>
+              <button type="button" id="addSocialLink">Add Social Link</button>
+            
+
+              <!-- Submit Button -->
+              <div>
+              <button type="button" id="createHome">SUBMIT</button>
+            </div>
+            </form>
+          </div>
+    </div>
+
+          <footer id="footer">
+            <p>
+              &copy;
+              <a href="https://www.roziacademy.com">Shuaib Khan</a> 2023. All
+              rights reserved.
+            </p>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="sidebar">
+      <div class="siteTitle">
+        <a href="/client/">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/companyPhotos%2FmoCTxsMnAjDWyi4B8PIA.png?alt=media&token=d2a6a16d-ba1b-4135-aa73-991703b7f114"
+            alt="logo"
+            width="50px"
+          />
+        </a>
+      </div>
+      <div class="dashboard">
+        <i class="fa-solid fa-house"></i>
+        <h3>Dashboard</h3>
+      </div>
+      <div class="menu">
+        <h4>PAGES</h4>
+        <ul>
+          <li>
+            <i class="fa-solid fa-bag-shopping"></i>
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-angle-right"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-bag-shopping"></i>
+            <a href="resume.html">Resume</a>
+            <i class="fa-solid fa-angle-right"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-bag-shopping"></i>
+            <a href="services.html">Services</a>
+            <i class="fa-solid fa-angle-right"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-bag-shopping"></i>
+            <a href="portfolio.html">Portfolio</a>
+            <i class="fa-solid fa-angle-right"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-bag-shopping"></i>
+            <a href="menu.html">Menu</a>
+            <i class="fa-solid fa-angle-right"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-bag-shopping"></i>
+            <a href="contact.html">Contact</a>
+            <i class="fa-solid fa-angle-right"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+  </body>
+</html>

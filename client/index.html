@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome icons cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- css  -->
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/auth.css" />
+    <!-- javascript  -->
+    <script src="./script/script.js" defer></script>
+    <script src="script/auth.js" defer></script>
+    <script src="script/home.js"></script>
+    <!-- aos animatiion library  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   <!-- toastify cdn  -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <title>Portfolio - home</title>
+  </head>
+
+  <body onload="preoloaderFunc()">
+    <!-- preloader  -->
+    <div class="lds-roller" id="preloader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- <div class="dashboard">
+      <a href="./dashboard/">Dashboard</a>
+    </div> -->
+
+    <!-- header  -->
+    <header>
+      <nav class="navbar"  id="navbar">
+        <div class="navbar-left">
+          <a href="index.html">
+            <div class="logo">
+              <!-- <h1 class="site-title">Alex <span class="mention">Smith</span></h1> -->
+            </div>
+          </a>
+        </div>
+        <div class="navbar-right closed">
+          <ul class="menu"></ul>
+        </div>
+
+         <!-- Dynamic Login or Logout will be added here -->
+
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- home  -->
+    <div class="home-wrapper" data-aos="fade-right">
+      <div class="home-header">
+        <div class="col">
+          <img id="userImage" alt="" />
+        </div>
+        <div class="col">
+          <h1 id="name"></h1>
+          <p id="skills"></p>
+          <div class="social-links">
+            <a href="">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="home-content">
+        <div class="col">
+          <h3>About <span class="mention">Us</span></h3>
+          <p id="aboutMe"></p>
+          <button>
+            <a id="resumeLink" download>Download Resume</a>
+          </button>
+        </div>
+        <div class="col">
+          <ul>
+            <li>
+              <span>Age</span>
+              <span>24</span>
+            </li>
+            <li>
+              <span>Residence</span>
+              <span>Pakistan</span>
+            </li>
+            <li>
+              <span>Adress</span>
+              <span>Islamabad</span>
+            </li>
+            <li>
+              <span>Email</span>
+              <span>shoaib@roziacademy.tech</span>
+            </li>
+            <li>
+              <span>Phone</span>
+              <span>+92 3481921015</span>
+            </li>
+            <li>
+              <span>Freelance</span>
+              <span>Available</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- login popup  -->
+    <div id="popupContainer" class="popup-container">
+      <div id="loginPopup" class="popup">
+        <div class="cross" onclick="hideLoginPopup()">
+          <i class="fa fa-remove"></i>
+        </div>
+        <div class="popup-content">
+          <h2>Login Form</h2>
+        </div>
+        <form onsubmit="handleLoginSubmit(event)">
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Write your email.."
+            />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Write your password here.."
+            />
+          </div>
+          <div class="btns">
+            <button type="submit">LOGIN</button>
+            <button
+              class="register-btn"
+              type="button"
+              onclick="toggleRegisterForm()"
+            >
+              Register Here
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- register popup  -->
+    <div id="popup-Container" class="popup-register-container">
+      <div id="registerPopup" class="popup">
+        <div class="cross" onclick="hideRegisterPopup()">
+          <i class="fa fa-remove"></i>
+        </div>
+        <div class="popup-content">
+          <h2>Register Form</h2>
+        </div>
+        <form onsubmit="handleRegisterSubmit(event)">
+          <div>
+            <label for="regName">name</label>
+            <input
+              type="text"
+              name="regName"
+              id="regName"
+              placeholder="Write your name.."
+            />
+          </div>
+          <div>
+            <label for="regEmail">Email</label>
+            <input
+              type="email"
+              name="regEmail"
+              id="regEmail"
+              placeholder="Write your email.."
+            />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Write your phone number.."
+            />
+          </div>
+          <div>
+            <label for="regPassword">Password</label>
+            <input
+              type="password"
+              name="regPassword"
+              id="regPassword"
+              placeholder="Write your password.."
+            />
+          </div>
+          <div>
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Write your Confirm Password here"
+            />
+          </div>
+          <div>
+            <button type="submit">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- footer  -->
+    <footer class="copyright">
+      <p>
+        © 2023 All rights reserved. Made By
+        <span class="mention">welivetech</span>
+      </p>
+    </footer>
+
+    <!-- aos animatiion library  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+     
+      AOS.init({
+        duration: 1000,
+      });
+
+      var swiper = new Swiper(".mySwiper", {});
+    </script>
+  </body>
+</html>
