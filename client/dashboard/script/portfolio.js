@@ -1,4 +1,6 @@
-  // to set backend data in fields (to not lose data by refreshing)
+const BaseAPI = 'http://localhost:8000';
+
+// to set backend data in fields (to not lose data by refreshing)
   function setFormFields(data) {
 
     const portfolioContainer = document.getElementById("portfolio");
@@ -11,7 +13,7 @@
             <input type="text" name="project[title][]" value="${project.title}" required><br><br>
 
             <label for="projectimage">Project Image:</label>
-            <img src="http://localhost:8000/public/images/${project.image}" style="max-width: 180px;" alt="Resume" ><br><br>
+            <img src="${BaseAPI}/public/images/${project.image}" style="max-width: 180px;" alt="Resume" ><br><br>
             <input type="file" name="projectImage" value="${project.image}"><br><br>
 
             <label for="projectDetails">Project Details:</label>
@@ -77,7 +79,7 @@ async function sendDataToServer() {
     const formData = new FormData(portfolioForm); // Use FormData to collect form data
 
     try {
-        const response = await fetch('http://localhost:8000/api/portfolio', {
+        const response = await fetch(`${BaseAPI}/api/v1/portfolio`, {
             method: 'POST',
             body: formData, // Send FormData directly instead of JSON.stringify
         });
@@ -105,7 +107,7 @@ portfolioForm.addEventListener("submit", async (e) => {
 // get data from backend 
 async function getPortfolioData() {
     try {
-        const res = await fetch('http://localhost:8000/api/portfolio');
+        const res = await fetch(`${BaseAPI}/api/v1/portfolio`);
         
         if (!res.status === 200) {
             throw new Error('Network response was not ok');

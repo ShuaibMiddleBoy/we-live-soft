@@ -1,3 +1,4 @@
+const BaseAPI = 'http://localhost:8000';
 
         // to set backend data in fields (to not lose data by refreshing)
         function setFormFields(data) {
@@ -8,7 +9,7 @@
                 const serviceDiv = document.createElement('div');
                 serviceDiv.innerHTML = `
             <label for="serviceimage">Service Image:</label>
-            <img src="http://localhost:8000/public/images/${service.serviceImage}" style="max-width: 180px;" alt="Resume" ><br><br>
+            <img src="${BaseAPI}/public/images/${service.serviceImage}" style="max-width: 180px;" alt="Resume" ><br><br>
             <input type="file" name="servicesImage" value="${service.serviceImage}" multiple id="serviceimage"><br><br>
             <label for="servicetitle">Service Title:</label>
             <input type="text" name="services[title][]" value="${service.serviceTitle}" id="servicetitile" required><br><br>
@@ -31,7 +32,7 @@
                 const clientDiv = document.createElement('div');
             clientDiv.innerHTML = `
             <label for="clientimage">Client Image:</label>
-            <img src="http://localhost:8000/public/images/${client.clientImage}" style="max-width: 180px;" alt="Resume" ><br><br>
+            <img src="${BaseAPI}/public/images/${client.clientImage}" style="max-width: 180px;" alt="Resume" ><br><br>
             <input type="file" name="clientsImage" value="${client.clientImage}" multiple id="clientimage"><br><br>
             <button type="button" class="removeClient">Remove Client</button><br><br><br>
             `;
@@ -51,7 +52,7 @@
                 const feedbackDiv = document.createElement('div');
             feedbackDiv.innerHTML = `
             <label for="feedbackimage">Reviewer Image:</label>
-            <img src="http://localhost:8000/public/images/${feedback.image}" style="max-width: 180px;" alt="Resume" ><br><br>
+            <img src="${BaseAPI}/public/images/${feedback.image}" style="max-width: 180px;" alt="Resume" ><br><br>
             <input type="file" name="feedbacksImage" value="${feedback.image}" multiple id="feedbackimage" ><br><br>
             <label for="feedbackReviewer">Reviewer Name:</label>
             <input type="text" name="feedbacks[reviewer][]" value="${feedback.reviewer}" id="feedbackreviewer" required><br><br>
@@ -213,7 +214,7 @@
             const formData = new FormData(servicesForm);
 
             try {
-                const response = await fetch('http://localhost:8000/api/services', {
+                const response = await fetch(`${BaseAPI}/api/v1/services`, {
                     method: 'POST',
                     body: formData
                 });
@@ -236,7 +237,7 @@
         // get data from backend 
         async function getServicesData() {
             try {
-                const res = await fetch('http://localhost:8000/api/services');
+                const res = await fetch(`${BaseAPI}/api/v1/services`);
 
                 if (!res.status === 200) {
                     throw new Error('Network response was not ok');

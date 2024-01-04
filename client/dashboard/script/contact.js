@@ -1,3 +1,4 @@
+const BaseApi = "http://localhost:8000";
 
         // to set backend data in fields (to not lose data by refreshing)
         function setFormFields(data) {
@@ -70,7 +71,7 @@
             const formData = new FormData(contactForm); // Use FormData to collect form data
 
             try {
-                const response = await fetch('http://localhost:8000/api/contactInfo', {
+                const response = await fetch(`${BaseApi}/api/v1/contactInfo`, {
                     method: 'POST',
                     body: formData, // Send FormData directly instead of JSON.stringify
                 });
@@ -99,7 +100,7 @@
         // get data from backend 
         async function getContactData() {
             try {
-                const res = await fetch('http://localhost:8000/api/contactInfo');
+                const res = await fetch(`${BaseApi}/api/v1/contactInfo`);
 
                 if (!res.status === 200) {
                     throw new Error('Network response was not ok');

@@ -1,4 +1,4 @@
-
+const BaseAPI = 'http://localhost:8000';
 const loginPopup = document.querySelector(".popup-container");
 const registerPopup = document.querySelector(".popup-register-container");
 const loginBtn = document.querySelector(".login-btn");
@@ -29,7 +29,7 @@ function handleLoginSubmit(event) {
   const password = document.getElementById('password').value;
   const formData = {email, password}
 
-    fetch("http://localhost:8000/api/v1/auth/login", {
+    fetch(`${BaseAPI}/api/v1/auth/login`, {
     method: "POST",
     body: JSON.stringify(formData),
     headers: {
@@ -67,7 +67,7 @@ function handleRegisterSubmit(event) {
 
   const formData = {name, phone, email, password, confirmPassword}
 
-  fetch("http://localhost:8000/api/v1/auth/register", {
+  fetch(`${BaseAPI}/api/v1/auth/register`, {
     method: "POST",
     body: JSON.stringify(formData),
     headers: {

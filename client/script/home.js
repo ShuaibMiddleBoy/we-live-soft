@@ -1,6 +1,8 @@
+const Base = "http://localhost:8000";
+
 async function fetchData() {
     try {
-      const response = await fetch("http://localhost:8000/api/home");
+      const response = await fetch(`${Base}/api/v1/home`);
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -24,7 +26,7 @@ async function fetchData() {
       .getElementById("userImage")
       .setAttribute(
         "src",
-        `http://localhost:8000/public/images/${homeData.image}` ||
+        `${Base}/public/images/${homeData.image}` ||
           "./path/to/default/image.jpg"
       );
     // Populate social links

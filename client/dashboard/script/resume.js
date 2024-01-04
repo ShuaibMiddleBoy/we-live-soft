@@ -1,4 +1,6 @@
-   // to set backend data in fields (to not lose data by refreshing)
+const BaseAPI = 'http://localhost:8000';
+
+// to set backend data in fields (to not lose data by refreshing)
    function setFormFields(data) {
 
     const resumeContainer = document.getElementById("resume");
@@ -162,7 +164,7 @@ async function sendDataToServer() {
     const formData = new FormData(resumeForm); // Use FormData to collect form data
 
     try {
-        const response = await fetch('http://localhost:8000/api/resume', {
+        const response = await fetch(`${BaseAPI}/api/v1/resume`, {
             method: 'POST',
             body: formData, // Send FormData directly instead of JSON.stringify
         });
@@ -189,7 +191,7 @@ resumeForm.addEventListener("submit", async (e) => {
 // get data from backend 
 async function getResumeData() {
     try {
-        const res = await fetch('http://localhost:8000/api/resume');
+        const res = await fetch(`${BaseAPI}/api/v1/resume`);
 
         if (!res.status === 200) {
             throw new Error('Network response was not ok');

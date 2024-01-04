@@ -29,15 +29,24 @@
     <!-- css  -->
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/auth.css" />
+
+    <!-- aos animatiion library  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- toastify cdn  -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+
     <!-- javascript  -->
     <script src="./script/script.js" defer></script>
     <script src="script/auth.js" defer></script>
-    <script src="script/home.js"></script>
-    <!-- aos animatiion library  -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-   <!-- toastify cdn  -->
-   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="script/home.js" defer></script>
 
     <title>Portfolio - home</title>
   </head>
@@ -61,7 +70,7 @@
 
     <!-- header  -->
     <header>
-      <nav class="navbar"  id="navbar">
+      <nav class="navbar" id="navbar">
         <div class="navbar-left">
           <a href="index.html">
             <div class="logo">
@@ -73,7 +82,7 @@
           <ul class="menu"></ul>
         </div>
 
-         <!-- Dynamic Login or Logout will be added here -->
+        <!-- Dynamic Login or Logout will be added here -->
 
         <div class="hamburger-menu">
           <div class="bar"></div>
@@ -261,13 +270,13 @@
 
     <!-- aos animatiion library  -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-     
-      AOS.init({
-        duration: 1000,
-      });
+<script>
+AOS.init({
+    duration: 1000,
+  });
 
-      var swiper = new Swiper(".mySwiper", {});
-    </script>
+  var swiper = new Swiper(".mySwiper", {});
+
+</script>
   </body>
 </html>
