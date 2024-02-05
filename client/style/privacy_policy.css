@@ -1,0 +1,65 @@
+/* ===========================================
+Privay Policy Page CSS
+======================================= */
+
+
+
+/* ======================================== 
+Privacy Policy Section css
+ ========================================   */
+ .privacy-policy-section {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .privacy-policy-section .heading {
+    width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .privacy-policy-section .heading > span {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--header-bg);
+  }
+  
+  .privacy-policy-section .heading > h4 {
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--heading-color);
+    position: relative;
+  }
+  
+  
+  
+  .privacy-policy-section .heading h4::after {
+    content: "";
+    width: 80px;
+    position: absolute;
+    height: 1px;
+    background: var(--header-bg);
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--header-bg),
+      transparent
+    );
+    position: absolute;
+    bottom: -15px;
+    left: calc(50% - 40px);
+  }
+  
+  
+  .privacy-policy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+  }
