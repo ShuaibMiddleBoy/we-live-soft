@@ -61,6 +61,7 @@ h6 {
 
 p,
 a,
+li,
 button,
 span {
   font-family: var(--content-font); /* Apply the content font to paragraphs */
@@ -1261,17 +1262,17 @@ Media Queries Start
 
 
     
-.services-section .heading, .latest-work-section .heading, .testimonial-section .heading, .blogs-section .heading, .contact-section .heading {
+.services-section .heading, .latest-work-section .heading, .testimonial-section .heading, .blogs-section .heading, .contact-section .heading, privacy-policy-section .heading {
   width: 80%;
   gap: 5px;
 }
 
-.services-section .heading > span, .latest-work-section .heading > span, .testimonial-section .heading > span , .blogs-section .heading span , .contact-section .heading > span{
+.services-section .heading > span, .latest-work-section .heading > span, .testimonial-section .heading > span , .blogs-section .heading span , .contact-section .heading > span, .privacy-policy-section .heading > span{
   letter-spacing: 2px;
   font-size: 1.2rem;
 }
 
-.services-section .heading > h4, .latest-work-section .heading > h4, .testimonial-section .heading > h4, .blogs-section .heading > h4 , .contact-section .heading > h4{
+.services-section .heading > h4, .latest-work-section .heading > h4, .testimonial-section .heading > h4, .blogs-section .heading > h4 , .contact-section .heading > h4, .privacy-policy-section .heading > h4{
   font-weight: 700;
   font-size: 2.2rem;
   color: var(--heading-color);

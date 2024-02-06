@@ -1,3 +1,4 @@
+
 /* ===========================================
 Privay Policy Page CSS
 ======================================= */
@@ -8,12 +9,21 @@ Privay Policy Page CSS
 Privacy Policy Section css
  ========================================   */
  .privacy-policy-section {
-    padding-top: 40px;
+  padding-top: 40px;
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
+    position: relative;
   }
-  
-  .privacy-policy-section .heading {
+  .privacy-policy-section::before{
+    content: "";
+      background: url(../images/dot_bg.png);
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+  }
+  .privacy-policy-section .heading {  
     width: 700px;
     margin: auto;
     display: flex;
@@ -59,7 +69,99 @@ Privacy Policy Section css
   
   .privacy-policy{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:10px;
+    flex-direction: column;
+    gap:25px;
   }
+
+
+  .privacy-policy .pcypolicy{
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+  }
+
+  .pcypolicy .question{
+    color: var(--heading-color);
+    font-size: 2rem;
+  }
+
+  
+  .pcypolicy p{
+    color: var(--para-color);
+    font-size: 1.6rem;
+  }
+
+  .pcypolicy ul li a{
+    color: var(--header-bg);
+    font-weight: 600;
+  }
+
+  .pcypolicy ul{
+    color: var(--para-color);
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+/* ===========================================
+Media Queries Start 
+======================================= */
+
+  
+@media screen and (max-width: 800px) {
+
+
+.privacy-policy-section .heading {
+  width: 80%;
+  gap: 5px;
+}
+
+.privacy-policy-section .heading > span{
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+}
+ .privacy-policy-section .heading > h4{
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--heading-color);
+}
+}
+
+@media screen and (max-width: 600px) {
+  .privacy-policy-section .heading {  
+    gap: 2px;
+  }
+  
+  .privacy-policy-section .heading > span {
+   font-size: 1.2rem;
+   letter-spacing: 1px;
+  }
+  
+  .privacy-policy-section .heading > h4 {
+    font-size: 2rem;
+  }
+  
+
+
+  .pcypolicy .question{
+    font-size: 1.4rem;
+  }
+
+  
+  .pcypolicy p{
+    font-size: 1.2rem;
+  }
+
+  .pcypolicy ul{
+    font-size: 1.2rem;
+    gap: 0px;
+  }  
+}
+
+
+@media screen and (max-width: 400px) {
+  .pcypolicy p{
+    line-height:15px;
+  }
+}

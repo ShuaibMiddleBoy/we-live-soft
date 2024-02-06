@@ -13,8 +13,17 @@ Terms & Conditions Section css
     padding-top: 40px;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
-  
+  .terms-conditions-section::before{
+    content: "";
+    background: url(../images/dot_bg.png);
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
   .terms-conditions-section .heading {
     width: 700px;
     margin: auto;
@@ -61,7 +70,130 @@ Terms & Conditions Section css
   
   .terms-conditions{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap:25px;
+  }
+
+  .terms-conditions .welcome{
+    display: flex;
+    flex-direction: column;
     gap:10px;
   }
+
+  .terms-conditions .welcome h3{
+    font-size: 2.5rem;
+    color: var(--heading-color);
+  }
+
+  .terms-conditions .thank-you h4{
+    font-size: 2rem;
+    color: var(--heading-color);
+  }
+
+  .terms-conditions .welcome p{
+    color: var(--para-color);
+    font-size: 1.6rem;
+  }
+  .terms-conditions .tmconditions{
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+  }
+
+  .tmconditions .question{
+    color: var(--heading-color);
+    font-size: 2rem;
+  }
+
+  
+  .tmconditions p{
+    color: var(--para-color);
+    font-size: 1.6rem;
+  }
+
+
+  .tmconditions ul{
+    color: var(--para-color);
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+
+
+  
+/* ===========================================
+Media Queries Start 
+======================================= */
+
+  
+@media screen and (max-width: 800px) {
+
+
+  .terms-conditions-section .heading {
+    width: 80%;
+    gap: 5px;
+  }
+  
+  .terms-conditions-section .heading > span{
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+  }
+   .terms-conditions-section .heading > h4{
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--heading-color);
+  }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .terms-conditions-section .heading {  
+      gap: 2px;
+    }
+    
+    .terms-conditions .heading > span {
+     font-size: 1.2rem;
+     letter-spacing: 1px;
+    }
+    
+    .terms-conditions .heading > h4 {
+      font-size: 2rem;
+    }
+    .terms-conditions .welcome{
+      gap: 2px;
+    }
+    .terms-conditions .welcome h3 {
+      font-size: 1.6rem;
+    }
+    .terms-conditions .thank-you h4 {
+      font-size: 1.6rem;
+    }
+    .terms-conditions .welcome p{
+      font-size: 1.3rem;
+    }
+  
+    .tmconditions .question{
+      font-size: 1.4rem;
+    }
+  
+    
+    .tmconditions p{
+      font-size: 1.2rem;
+    }
+    .tmconditions li{
+      font-size: 1.2rem;
+    }
+   
+  }
+  
+  
+  @media screen and (max-width: 400px) {
+    .tmconditions p{
+      line-height:15px;
+    }
+    .welcome p{
+      line-height:15px;
+    }
+  }
+  
